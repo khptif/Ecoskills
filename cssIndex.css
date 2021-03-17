@@ -1,12 +1,16 @@
+body {
+    background-image: url("images/background.jpg");
+}
 
 div#EnTete {   
+    background: white;
     position: fixed;
     border: solid 3px green;
     width: 100%;
-    height: 50px;
-    
-    margin-top: 0px;
-    
+    height: 40px;
+    left: 0px;
+    top: 0px;
+    z-index: 100;
 }
 
 div#EnTete * {
@@ -29,6 +33,7 @@ div#EnTete input[type="text"] {
 }
 
 div#Lien_Questionnaires{
+    background : pink;
     position: relative;
     top: 60px;
     margin-left: 25%;
@@ -36,7 +41,33 @@ div#Lien_Questionnaires{
     display: block;
     border: brown solid 3px;
     width: 50%;
-    height: 50px;
+    height: 100px;
 }
 
-div#Formations{}
+div#Lien_Questionnaires a{
+    border: solid 3px palevioletred;
+    position: absolute;
+    top :50%;
+    left: 25%;
+}
+div#Formations{
+    border: darkblue solid 3px;
+    position: relative;
+    top: 60px;
+    margin-left: 10%;
+    margin-right: 10%;
+
+    background: cyan;
+}
+
+.formation p {
+    font-weight: bolder;
+}
+
+.formation a img{
+    display: inline;
+    position: relative;
+    width: 10%;
+    margin: 1%;
+    
+}
