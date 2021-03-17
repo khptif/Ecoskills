@@ -1,3 +1,5 @@
+<?php require_once("Entete.php");?>
+
 <!DOCTYPE html>
 <html lang="fr">
     <head>
@@ -7,23 +9,13 @@
 
     </head>
 
-    <body>
-        <div id="EnTete">
-            <a href="index.html" target="_self"><img src="images/LogoEcoSkill.jpg" alt="Logo" title="Page d'acceuil"></a>
-          
-            <form action="index.html" method="POST">
-                <input type="text" value="mots clés">
-                <input type="submit" value="Recherche">
-            </form>
-
-            <a href="index.html" target="_self"><img src="images/LogoPageAccueil.png" alt="Page d'Accueil" title="Page d'acceuil"></a>
-            <a href="" target="_self" ><img src="images/LogoUtilisateur.jpg" alt="MonCompte" title="Mon compte"></a>
-
+    <body style="background-image: url('images/background.jpg')">
+        <?php echo $enTete;?>
         </div>
         <br>
         <div id="Lien_Questionnaires">
             <p>Trouvez une formation sur mesure.</p>
-            <a href="" target="_self" > <div id="Lien">Trouver Ma formation ideale</div></a>
+            <a href="Questionnaire/Question1.php" target="_self" > <div id="Lien">Trouver Ma formation ideale</div></a>
         </div>
         <br>
         <div id="Formations">
