@@ -5,7 +5,7 @@
     <head>
         <meta charset="utf-8">
         <title>Ecoskill</title>
-        <link rel="stylesheet" type="text/css" href="cssIndex.css">
+        <link rel="stylesheet" type="text/css" href="Css/cssIndex.css">
 
     </head>
 
@@ -21,7 +21,7 @@
         <div id="Formations">
             <div id="Alimentation" class="formation">
                 <p>Alimentation</p> <br>
-                <a href="" target="_self" ><img src="images/Alimentation1.jpg" alt="Formation1" title="Formation Alimentation 1"></a>
+                <a href="Formations/formationAlimentation.php" target="_self" ><img src="images/Alimentation1.jpg" alt="Formation1" title="Formation Alimentation 1"></a>
                 <a href="" target="_self" ><img src="images/Alimentation2.jpg" alt="Formation2" title="Formation Alimentation 2"></a>
                 <a href="" target="_self" ><img src="images/Alimentation3.jpg" alt="Formation3" title="Formation Alimentation 3"></a>
             </div>

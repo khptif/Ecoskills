@@ -1,0 +1,42 @@
+@import url("../cssIndex.css");
+
+:root {
+    --videoWidth: 500px;
+  }
+
+div#chapitrage {
+    position: relative;
+    top: 60px;
+    left: 25%;
+    right: 25%;
+}
+
+div#video {
+    position: relative;
+    top: 70px;
+    left: 25%;
+    right: 25%;
+}
+
+div#video video{
+    width: var(--videoWidth);
+}
+
+div#prochain {
+    position: relative;
+    top : 100px;
+    left: 25%;
+    width: var(--videoWidth);
+}
+
+div#prochain a#precedent {
+    position: absolute;
+    left: 0%;
+    
+}
+
+div#prochain a#suivant {
+    position: absolute;
+    right: 0%;
+    
+}

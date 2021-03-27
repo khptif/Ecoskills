@@ -1,0 +1,94 @@
+@import url("../cssIndex.css");
+
+
+body {
+    position: absolute;
+    height: 100%;
+}
+div#description {
+    position: relative;
+    margin-top: 50px;
+    width: 80%;
+    height:30%;
+    left:10%;
+    border: solid green 2px;
+}
+
+div#description div#image {
+    float: left;
+    width: 20%;
+    height: auto;
+}
+
+div#description div#image img {
+    width:100%;
+    height: 100%;
+}
+
+div#description div#resume {
+    float: left;
+    bottom: 10%;
+    width: 30%;
+    height: 50%;
+}
+
+div#description div#resume *{
+    display: block;
+    position: relative;
+    margin: 1%;
+}
+div#description div#resume h1 {
+    top: 1%;
+    font-size: 2vw;
+}
+div#description div#resume h2 {
+    top: 1%;
+    font-size: 1.5vw;
+}
+div#description div#resume p{
+    bottom: 1%;
+    font-size: 1vw;
+    word-wrap: break-word;
+}
+
+div#description div#divers {
+    float: inline-start;
+    
+    
+}
+div#description div#divers span#duree {
+    display: block;
+    height: 100%;
+    width: 20%;
+    left: 0%;
+}
+div#description div#divers span#duree img{
+    float: left;
+    width: 20%;
+    height: 100%;
+    bottom: 10%;
+}
+div#description div#divers span#duree span#temps{
+    float: left;
+    left: 50%;
+    top:25%;
+    font-size: 2vw;
+}
+
+div#description div#divers span#geste {
+   float: left;
+    height: 100%;
+    width: 10%;
+    left: 20%;
+}
+
+div#description div#divers span#nombre {
+    float: left;
+    height: 100%;
+    width: fit-content;
+    left: 20%;
+}
+
+div.chapitre {
+    position: relative;
+}
