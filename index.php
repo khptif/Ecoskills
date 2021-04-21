@@ -1,4 +1,4 @@
-<?php require_once("Entete.php");?>
+<?php require_once("variables.php");?>
 
 <!DOCTYPE html>
 <html lang="fr">

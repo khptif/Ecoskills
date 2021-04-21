@@ -1,0 +1,157 @@
+
+@import url("../variables.css");
+
+body {
+    background-color: var(--couleurPrincipale);
+}
+
+div#formulaires {
+
+    height: 500px;
+    width: 900px;
+    border: solid 3px var(--couleurPrincipale);
+    background-color: var(--couleurSecondaire);
+    border-radius: 30px;
+    margin: 0 auto;
+    color: var(--couleurPrincipale);
+    padding: 2px;
+}
+
+.input {
+    display: block;
+    height: 30px;
+}
+
+p.erreur {
+    font-size: smaller;
+    font-weight: bolder;
+    display: inline;
+}
+
+p.erreurSQL{
+    font-size: larger;
+    color: white;
+    font-weight: bolder;
+    
+}
+
+label{
+    float: left;
+}
+
+div#formulaires input, select {
+    display: inline;
+}
+
+h2 {
+    text-align: center;
+}
+div#inscription{
+    float: left;
+    position: relative;
+    left: 15%;
+    height: 80%;
+    width: 300px;
+    margin-top: 1%;
+    border: var(--couleurPrincipale) 3px solid;
+    border-radius: 30px;
+    padding: 2px;
+}
+
+div#login{
+    float: right;
+    position: relative;
+    height: 80%;
+    width: 300px;
+    margin-top: 1%;
+    right: 15%;
+    border: var(--couleurPrincipale) 3px solid;
+    padding: 2px;
+    border-radius:30px;
+}
+
+.input {
+    display: block;
+    margin-bottom: 20px;
+    
+}
+
+.input * {
+    color: var(--couleurPrincipale);
+}
+
+label {
+    width: 100px;
+    font-weight: bolder;
+}
+
+div#formulaires input[type="submit"] {
+
+    float: right;
+    margin-right: 20px;
+}
+
+div#formulaires input[type="text"] {
+    border: var(--couleurPrincipale) 1px solid;
+    color: var(--couleurPrincipale);
+    border-radius: 30px;
+    outline: none;
+}
+
+div#formulaires input[type="text"]:focus {
+    outline: none;
+    border: var(--couleurPrincipale) 3px solid;
+    border-radius: 30px;
+    font-weight: bolder;
+}
+
+div#formulaires input[type="number"]{
+    
+    outline: none;
+    border: var(--couleurPrincipale) 1px solid;
+    border-radius: 30px;
+    color: var(--couleurPrincipale);
+}
+div#formulaires input[type="number"]:focus {
+    font-weight: bolder;
+    outline: none;
+    border: var(--couleurPrincipale) 3px solid;
+    border-radius: 30px;
+}
+
+div#formulaires select {
+    
+    outline: none;
+    border: var(--couleurPrincipale) 1px solid;
+    border-radius: 30px;
+}
+
+div#formulaires select:focus {
+    font-weight: bolder;
+    outline: none;
+    border: var(--couleurPrincipale) 3px solid;
+    border-radius: 30px;
+}
+
+div#formulaires input[type="submit"] {
+
+    position: absolute;
+    bottom: 10px;
+    right:10px;
+    height: 30px;
+    width: 90px;
+    border: var(--couleurPrincipale) 3px solid;
+    border-radius: 30px;
+}
+
+
+div#formulaires input[type="submit"]:hover {
+
+    cursor: pointer;
+}
+
+div#formulaires input[type="submit"]:hover:focus {
+
+    cursor: pointer;
+    outline: none;
+}

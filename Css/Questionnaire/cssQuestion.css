@@ -1,12 +1,12 @@
-@import url("../cssIndex.css");
+@import url("../variables.css");
 
 body {
     width: 80%;
-    background-color: aqua;
+    background-color: var(--couleurPrincipale);
     margin: 0 auto;
 }
+
 body div {
-    top: 50px;
     margin: 0 auto;
     border-radius:30px ;
 }
@@ -15,12 +15,11 @@ body div {
 
 div#Texte {
     position: relative;
-    background-color: rgb(68, 110, 4);
-    top:50px;
+    background-color: var(--couleurIII);
     width: 100%;
     height: 100px;
     margin: 0 auto;
-    color: #032c03;
+    color: var(--couleurPrincipale)
 }
 
 div#Texte p{
@@ -57,9 +56,10 @@ button{
     margin-bottom: 10px;
     width: 50%;
     height: 200px;
-    color: #032c03;
+    color: var(--couleurPrincipale);
     font-size: 1.4em;
-    background-color: rgb(155, 245, 155);
+    background-color: var(--couleurSecondaire);
+    border: solid 1px var(--couleurPrincipale);
 }
 
 button:hover{

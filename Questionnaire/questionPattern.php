@@ -1,5 +1,5 @@
 <?
-require_once("../Entete.php");
+require_once("../variables.php");
  
 function sauvegardeReponse()
 {

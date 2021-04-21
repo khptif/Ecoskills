@@ -1,11 +1,14 @@
 <?php
+
+session_start();
+
 require_once('../Entete.php');
 require_once('utilisateurPattern.php');
 
 $arguments = array();
-$arguments['imageUtilisateur'] = 'images/Utilisateur/utilisateur.png';
-$arguments['nom'] = 'nom';
-$arguments['prenom'] = 'prenom';
+$arguments['imageUtilisateur'] = $_SESSION['adresseImage'];
+$arguments['nom'] = $_SESSION['nom'];
+$arguments['prenom'] = $_SESSION['prenom'];
 $arguments['date'] = '23.03.2021';
 $arguments['commune'] = 'Carouge';
 $arguments['nombreHabitudes'] = 2;

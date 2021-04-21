@@ -1,104 +1,99 @@
 <?php
-require_once("../Entete.php");
- $head = 
-        '<meta charset="utf-8">
+require_once("../variables.php");
+    $head =<<< EOT
+        <meta charset="utf-8">
         <base href="..">
-        <link rel="stylesheet" type="text/css" href="Css/Formations/cssFormation.css">';
-
+        <link rel="stylesheet" type="text/css" href="Css/Formations/cssFormation.css">
+EOT;
 // la fonction qui permettera d'écrire le code html selon les différentes données
-function code($arguments,$chapitre,$sousChapitre)
+function code($arguments,$chapitre)
 {
-    //ecrire l'en-tête et le haut de la page 
+    //l'en-tête et le haut de la page 
     global $enTete;
     global $head;
-    // le patron de code. Première partie
-    $patternHtml = <<<EOT
-    <!DOCTYPE html>
-    <html lang="fr">
-        <head>
-            {$head}
-            <title>{$arguments['titre']}</title>
-        </head>
-
-        <body>
-            {$enTete}
-        
-            <div id="description">
-                <div id="image">
-                    <img {$arguments['image']}>
-                </div>
-                <div id="resume">
-                    {$arguments['resume']}
-                </div>
-                <div id="divers">
-                    {$arguments['divers']}
-                </div>    
-            </div>
-            <br>
-            
-EOT;
-// le script javascript qui permettra d'afficher et cacher les sous chapitres
-$scriptJS =<<< EOT
-<script>
-    function cache_affiche(idChapitre){
-        var sousChapitre = document.getElementbyId("resume").childNodes[2];
-        
-        if(sousChapitre.style.display == "none")
-        {
-            sousChapitre.style.display = "block";
-        }
-        else
-        {
-            sousChapitre.style.display = "none";
-        }
-    }
-</script>
-EOT;
-
-$patternHtml .= $scriptJS;
-// les patrons de code pour les chapitres
-$chapitreHtml = <<< EOT
-
-            <div id="%s">
-                <button onclick="cache_affiche("%s")"> + click on me</button>
-                <span> %s </span>
-                <div classe="sousChapitre" style="display: block;">
-                    %s 
-                </div>
-            </div>
-
-EOT;
-$sousChapitreHtml = <<< EOT
-<ul>
-%s
-                    </ul>
-EOT;
-// ecriture des chapitres
-// permet de choisir le sous tableau des sous chapitres
-// et donner un id unique à chaque bloc chapitre
-$numeroChapitre = 0;
-foreach($chapitre as $ch)
-{
-    $sousTitres = '';
-    foreach($sousChapitre[$numeroChapitre] as $ssch)//ajout de chaque sous chapitre
+    
+    // les codes html de chaque chapitre
+    $chapitresCodeHtml = '';
+    foreach($chapitre as $ch => $ssch)// on assemble les chapitres
     {
-        $sousTitres .= "\t \t \t \t \t \t <li> <a href='".$ssch[1]."' title='lien vers sous chapitre'>".$ssch[0] ."</a> </li>";
-        $sousTitres .= "\n ";
-    }
-    // on remplace les %s et concatène le tout
-    $sousChapitreEcrit = sprintf($sousChapitreHtml,$sousTitres);
-    $idChapitre = 'chapitre'.$numeroChapitre;
-    $chapitreEcrit = sprintf($chapitreHtml,$idChapitre,$idChapitre,$ch,$sousChapitreEcrit);
-    $patternHtml .= $chapitreEcrit;
-    $numeroChapitre ++;
-}
+        $codeSousChapitre = '';
+        foreach($ssch as $titre => $lien)// on assemble les sous chapitres
+        {
+            $a = <<< EOT
+                <li> <a href="$lien" title="$titre">$titre</a> </li>
+EOT;
+            $codeSousChapitre .= "\n". $a ;
+        }
+        $b = <<< EOT
+        <div id="$ch" class="chapitre">
+            <button onclick="cache_affiche('$ch')"> - </button>
+            <span class="chapitreTitre"> $ch </span>
+            <div class="sousChapitreTitre" style="display: none;">
+                <ul>
+                $codeSousChapitre
+                </ul>
+            </div> 
+        </div>
+EOT;
 
-// les balises de fermetures
-$patternHtml .='</body>';
-$patternHtml .='</html>';
+        $chapitresCodeHtml .= "\n".$b;
+    }
+
+// le script javascript qui permet d'afficher et de cacher les sous chapitres
+$scriptJS=<<< EOT
+        <script>
+            function cache_affiche(id = "")
+            {
+                var sousChapitre = document.getElementById(id).childNodes[5];
+                if(sousChapitre.style.display == "none")
+                {
+                    sousChapitre.style.display = "block";
+                    document.getElementById(id).childNodes[1].innerHTML = '+';
+                }
+                else
+                {
+                    sousChapitre.style.display = "none";
+                    document.getElementById(id).childNodes[1].innerHTML = '-';
+                }              
+            }
+        </script>
+EOT;
 
 // renvoie le code html en insérant les arguments
-return vsprintf($patternHtml,$arguments);
+$codeHtml = <<<EOT
+<!DOCTYPE html>
+<html lang="fr">
+    <head>
+$head
+        <title>{$arguments['titre']}</title>
+        
+    </head>
+
+    <body>
+$enTete
+        <div id="body">
+        <div id="description">
+            <div id="image">
+                <img {$arguments['image']}>
+            </div>
+            <div id="resume">
+{$arguments['resume']}
+            </div>
+            <div id="divers">
+{$arguments['divers']}
+            </div>    
+        </div>
+       
+        <br>
+$chapitresCodeHtml
+
+$scriptJS
+        </div>
+    </body>
+</html>   
+EOT;
+
+    return $codeHtml;
 }
 
 ?>

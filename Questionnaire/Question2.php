@@ -6,7 +6,7 @@
     $arguments = array();
 
     $arguments['titre'] = 'Question1';
-    $arguments['action'] = 'Questionnaire/Reponses.php';
+    $arguments['action'] = 'Questionnaire/Question3.php';
     $arguments['nom'] = 'depense';
     $arguments['valeur1'] = 'qualite';
     $arguments['valeur2'] = 'economie';

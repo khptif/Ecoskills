@@ -1,0 +1,93 @@
+
+/************ Les variables **************/
+:root{
+    --couleurPrincipale :#0a5038;
+    --couleurSecondaire : #f9d96f;
+    --couleurIII : #ffbdbd;
+    --couleurComplementaire1 : #ffffff;
+    --couleurComplementaire2 :#767676;
+    --enteteHeight: 80px;
+    --enteteMinWidth : 1000px;
+}
+/*****************************************/
+
+/************* Décalage haut pour laisser la place à l'entête*****************/
+
+body {
+    position: relative;
+    top: calc(var(--enteteHeight) + 20px);
+    overflow: scroll;
+}
+
+/************* En tête *******************/
+div#EnTete { 
+
+    position: fixed;
+    background: var(--couleurSecondaire);
+    border: solid 10px var(--couleurIII);
+    border-radius: 30px;
+    width: 90%;
+    min-width: var(--enteteMinWidth);
+    left: 5%;
+    height: var(--enteteHeight);
+    z-index: 100;
+
+    top :0px;
+}
+
+div#EnTete * {
+    display: inline;
+    position: relative;
+}
+
+
+div#EnTete a img {
+    height: 100%;
+    border-radius: 20px 0px 0px 20px;
+}
+
+
+div#EnTete input{
+   position: relative;
+   left:20px;
+   vertical-align: 30px;
+   height: 50%;
+   color: var(--couleurPrincipale);
+   margin:auto 0px;
+   border: var(--couleurPrincipale) 3px solid;
+   font-size: larger;
+}
+
+div#EnTete input[type='text']{
+
+    width: 30%;
+    border-radius: 30px 0px 0px 30px;
+    outline: none;
+}
+
+div#EnTete input[type='submit']{
+
+    height: calc(50% + 8px);
+    border-left: none;
+    left : 16px;
+    margin-right: 10px;
+    border-radius: 0px 30px 30px 0px;
+    outline: none;
+    width: 10%;
+}
+div#EnTete input[type='submit']:hover{
+
+    cursor: pointer;
+    font-weight: bolder;
+}
+
+div#liens {
+    float: right;
+    height: 100%;
+}
+
+div#EnTete a#accueilDroite, a#compte, a#login{
+    position: relative;
+}
+
+/**************************************/

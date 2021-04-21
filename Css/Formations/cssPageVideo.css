@@ -1,42 +1,208 @@
-@import url("../cssIndex.css");
+@import url("../variables.css");
 
 :root {
-    --videoWidth: 500px;
+    --videoWidth: 1000px;
   }
 
+body{
+    padding-top: 20px;
+    background-color: var(--couleurPrincipale);
+}
+
+a {
+    text-decoration: none;
+}
+
+a:hover{
+    text-decoration: underline;
+}
+
+/***************** LES CHAPITRES *************************/
 div#chapitrage {
     position: relative;
-    top: 60px;
-    left: 25%;
-    right: 25%;
+    margin: 0 auto;
+    height: 50px;
+    width: calc(var(--videoWidth) + 50px);
+    text-align: center;
+    background-color: var(--couleurIII);
+    border-radius: 30px;
+    padding-top: 30px;;
 }
 
+div#chapitrage *
+{
+    font-size: larger;
+    color: var(--couleurPrincipale);
+    margin: 0 5px 0px 5px;
+}
+/*************************************************************/
+
+/***************** LA VIDEO **********************************/
+/** bloc principal **/
 div#video {
     position: relative;
-    top: 70px;
-    left: 25%;
-    right: 25%;
-}
-
-div#video video{
+    margin: 20px auto 20px auto;
     width: var(--videoWidth);
+    height: 650px;
+    background-color: var(--couleurSecondaire);
+    border-radius: 30px;
 }
 
+/** Titre de la video **/
+div#video h2{
+    padding-top: 20px;
+    font-size: 2em;
+    font-weight: bolder;
+    color: var(--couleurPrincipale);
+    text-align: center;
+}
+
+/** Lecteur video **/
+div#video div#blocVideoPlayer{
+    position: relative;
+    width: 80%;
+    margin: 0 auto;
+    height: 450px;
+    overflow: hidden;
+    background-color: black;
+}
+
+/** la video **/
+div#blocVideoPlayer video{
+    position: absolute;
+    width:100%;
+    height: 100%;
+    bottom: 0px;
+}
+
+/** barre de progression de la lecture **/
+div#blocVideoPlayer div#progression
+{
+    position: absolute;
+    width: 100%;
+    height: 10px;
+    bottom: 10%;
+    background-color: rgba(255, 255, 255, 0.253);
+    z-index: 12;
+}
+
+div#blocVideoPlayer div#progression:hover{
+    cursor: pointer;
+}
+
+div#progression span#position {
+    position: absolute;
+    background-color: red;
+    height: 100%;
+    z-index: 14;
+}
+
+div#progression span#chargement {
+    position: absolute;
+    background-color:white;
+    height: 100%;
+    z-index: 13;
+}
+
+/** le bloc de contrôle avec ses bouttons **/
+
+div#blocVideoPlayer div#controlers
+{
+    position: absolute;
+    bottom: 0%;
+    width: 100%;
+    height: 10%;
+    background-color: rgba(255, 255, 255, 0.021);
+    z-index: 11;
+    
+}
+
+.controler{
+    position: absolute;
+    background-color: white;
+    width: 50px;
+    height: 100%;
+    
+}
+
+input#playButton {
+    left:15px;
+}
+
+input#stopButton {
+    left: 75px;
+}
+
+div#son {
+    left:135px;
+    width: 200px;
+    background-color: rgba(255, 255, 255, 0.021);
+    
+}
+
+div#iconeSon{
+    position: absolute;
+    width: 20%;
+    height: 100%;
+    background-color: white;
+}
+div#iconeSon img{
+    width: 100%;
+    height: 100%;
+}
+
+div#ajusterSon{
+    position: absolute;
+    width: 70%;
+    height: 100%;
+    left:21%;
+    background-color: rgba(0, 0, 0, 0);
+}
+
+div#barre {
+    position: relative;
+    border: solid 3px black;
+    background-color: rgba(255, 255, 255, 0.116);
+    width: 80%;
+    height: 20%;
+    margin: 0 auto;
+    margin-top: 15px;
+    
+}
+
+div#barre:hover {
+    cursor: pointer;
+}
+
+div#volume {
+    position: absolute;
+    width: 50%;
+    height: 100%;
+    background-color: white;
+}
+
+/** bloc de la prochaine et précèdente vidéo **/
 div#prochain {
     position: relative;
-    top : 100px;
-    left: 25%;
+    margin: 0 auto;
     width: var(--videoWidth);
+    height: 40px;
+    background-color: var(--couleurIII);
+    padding-top: 20px;
+    border-radius: 30px;
 }
 
+div#prochain a{
+    color: var(--couleurPrincipale);
+}
 div#prochain a#precedent {
     position: absolute;
-    left: 0%;
+    left: 5%;
     
 }
 
 div#prochain a#suivant {
     position: absolute;
-    right: 0%;
+    right: 5%;
     
 }

@@ -1,94 +1,156 @@
-@import url("../cssIndex.css");
+@import url("../variables.css");
 
 
 body {
-    position: absolute;
-    height: 100%;
+    background-color: var(--couleurPrincipale);
 }
+
+div#body
+{
+    width: 80%;
+    margin: 0 auto;
+    min-width: 800px;
+}
+
 div#description {
     position: relative;
     margin-top: 50px;
-    width: 80%;
-    height:30%;
-    left:10%;
-    border: solid green 2px;
+    width: 100%;
+    height:300px;
+    border: solid var(--couleurSecondaire) 10px;
+    border-radius: 30px;
 }
 
 div#description div#image {
-    float: left;
+    position: absolute;
     width: 20%;
-    height: auto;
+    height: 80%;
+    
 }
 
 div#description div#image img {
     width:100%;
     height: 100%;
+    border-top-left-radius: 20px;
 }
 
 div#description div#resume {
-    float: left;
-    bottom: 10%;
-    width: 30%;
-    height: 50%;
+    position: absolute;
+    width: 600px;
+    height: 80%;
+    left: 20%;
+    top: 0%;
 }
 
 div#description div#resume *{
-    display: block;
     position: relative;
     margin: 1%;
+    color: var(--couleurComplementaire1);
 }
 div#description div#resume h1 {
     top: 1%;
-    font-size: 2vw;
+    font-size: 2em;
+    
 }
 div#description div#resume h2 {
     top: 1%;
-    font-size: 1.5vw;
+    font-size: 1.5em;
 }
 div#description div#resume p{
     bottom: 1%;
-    font-size: 1vw;
+    margin-top: 10px;
+    font-size: 1em;
     word-wrap: break-word;
+    overflow-y: scroll;
+    width: 80%;
+    height: 60%;
+    bottom: 0px;
+    border: var(--couleurIII) solid 3px;
+    color: var(--couleurComplementaire2);
 }
 
 div#description div#divers {
-    float: inline-start;
-    
-    
+    position: absolute;
+    bottom: 0px;
+    width: 90%;
+    height: 20%;
 }
+
 div#description div#divers span#duree {
-    display: block;
     height: 100%;
     width: 20%;
-    left: 0%;
 }
 div#description div#divers span#duree img{
-    float: left;
-    width: 20%;
+    position: relative;
+    width: 100px;
     height: 100%;
-    bottom: 10%;
+    border-radius: 0px 0px 0px 11px ;
 }
+
+.lettreDivers
+{
+    text-align: center;
+    font-size: 1.5em;
+    font-weight: bolder;
+    vertical-align: 20px;
+}
+
 div#description div#divers span#duree span#temps{
-    float: left;
-    left: 50%;
-    top:25%;
-    font-size: 2vw;
+    position: relative;
+    left:20px;  
 }
 
 div#description div#divers span#geste {
-   float: left;
-    height: 100%;
+    position: relative;
+    display: inline-block;
     width: 10%;
     left: 20%;
+
 }
 
 div#description div#divers span#nombre {
-    float: left;
+    position: relative;
     height: 100%;
-    width: fit-content;
     left: 20%;
 }
 
 div.chapitre {
     position: relative;
+    margin-top: 30px;
+    font-size: 1.5em;
+    background-color: var(--couleurSecondaire);
+    border: solid black 3px;
+    border-radius: 30px;
+    padding: 30px;
+    color: var(--couleurPrincipale);
+}
+
+div.chapitre button{
+
+    width: 60px;
+    height: 60px;
+    font-size: larger;
+    font-weight: bolder;
+    border-radius: 30px;
+    outline: none;
+    border: var(--couleurIII) 2px solid;
+    background-color: var(--couleurIII);
+}
+
+div.chapitre button:hover{
+    cursor: pointer;
+}
+
+div.chapitre span.chapitreTitre {
+    font-size: larger;
+    font-weight: bolder;
+}
+
+div.chapitre a{
+    text-decoration: none;
+    color: var(--couleurPrincipale);
+}
+
+div.chapitre a:hover{
+    text-decoration: underline;
 }

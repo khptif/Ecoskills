@@ -1,5 +1,5 @@
 <?php
-require_once("../Entete.php");
+require_once("../variables.php");
 
 function code($arguments)
 {
@@ -42,12 +42,12 @@ END;
     <head>
         <meta charset="utf-8">
             <base href="../">
-            <link rel="stylesheet" type="text/css" href="Css/Utilisateur/cssUtilisateur.css">;
+            <link rel="stylesheet" type="text/css" href="Css/Utilisateur/cssUtilisateur.css">
     </head>
     
     <body>
 $enTete
-    
+    <div id="body">
         <div id="description" class="fondColor">
     
             <div id="fond">
@@ -94,11 +94,11 @@ $enTete
             </div>
     
         </div>
-
+   
 
 
 $tachesCodes
-
+    </div>
         </body>
     
     </html>
