@@ -4,7 +4,6 @@ require_once("../variables.php");
 function code($arguments)
 {
     global $enTete;
-
     // les différentes tâches accomplies
     $tachesCodes = ' ';
     for($i=0;$i<$arguments['nombreHabitudes'] ;$i++)

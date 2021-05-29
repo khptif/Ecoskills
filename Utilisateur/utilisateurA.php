@@ -6,11 +6,11 @@ require_once('../Entete.php');
 require_once('utilisateurPattern.php');
 
 $arguments = array();
-$arguments['imageUtilisateur'] = $_SESSION['adresseImage'];
-$arguments['nom'] = $_SESSION['nom'];
-$arguments['prenom'] = $_SESSION['prenom'];
+$arguments['imageUtilisateur'] = $_SESSION['AdresseImage'];
+$arguments['nom'] = $_SESSION['Nom'];
+$arguments['prenom'] = $_SESSION['Prenom'];
 $arguments['date'] = '23.03.2021';
-$arguments['commune'] = 'Carouge';
+$arguments['commune'] = $_SESSION['Commune'];
 $arguments['nombreHabitudes'] = 2;
 $arguments['pourcentage'] = 40;
 

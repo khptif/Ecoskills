@@ -2,6 +2,11 @@
 
 :root {
     --videoWidth: 1000px;
+    --videoHeight: 650px;
+    --blockVideoWidth: calc(var(--videoWidth) * 0.8);
+    --blockVideoHeight: calc(9*var(--blockVideoWidth)/16);
+    --controllerHeight: 50px;
+    --progressionHeight: 10px;
   }
 
 body{
@@ -43,7 +48,7 @@ div#video {
     position: relative;
     margin: 20px auto 20px auto;
     width: var(--videoWidth);
-    height: 650px;
+    height: var(--videoHeight);
     background-color: var(--couleurSecondaire);
     border-radius: 30px;
 }
@@ -60,10 +65,9 @@ div#video h2{
 /** Lecteur video **/
 div#video div#blocVideoPlayer{
     position: relative;
-    width: 80%;
+    width: var(--blockVideoWidth);
+    height: var(--blockVideoHeight);
     margin: 0 auto;
-    height: 450px;
-    overflow: hidden;
     background-color: black;
 }
 
@@ -72,7 +76,12 @@ div#blocVideoPlayer video{
     position: absolute;
     width:100%;
     height: 100%;
-    bottom: 0px;
+}
+
+div#clickVideo {
+    position: absolute;
+    width:100%;
+    height: calc(100% - var(--controllerHeight) - var(--progressionHeight));
 }
 
 /** barre de progression de la lecture **/
@@ -81,9 +90,9 @@ div#blocVideoPlayer div#progression
     position: absolute;
     width: 100%;
     height: 10px;
-    bottom: 10%;
+    bottom: var(--controllerHeight);
     background-color: rgba(255, 255, 255, 0.253);
-    z-index: 12;
+    
 }
 
 div#blocVideoPlayer div#progression:hover{
@@ -94,14 +103,14 @@ div#progression span#position {
     position: absolute;
     background-color: red;
     height: 100%;
-    z-index: 14;
+    z-index: 1;
 }
 
 div#progression span#chargement {
     position: absolute;
     background-color:white;
     height: 100%;
-    z-index: 13;
+    z-index: 0;
 }
 
 /** le bloc de contrôle avec ses bouttons **/
@@ -111,38 +120,37 @@ div#blocVideoPlayer div#controlers
     position: absolute;
     bottom: 0%;
     width: 100%;
-    height: 10%;
-    background-color: rgba(255, 255, 255, 0.021);
-    z-index: 11;
+    height: var(--controllerHeight);
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 3;
     
 }
 
-.controler{
-    position: absolute;
-    background-color: white;
-    width: 50px;
+div#controlers > *{
+    float: left;
+    margin-right: 10px;
+    background-color: rgba(0, 0, 0, 0.452);
+    width: var(--controllerHeight);
     height: 100%;
-    
 }
 
 input#playButton {
-    left:15px;
+    
 }
 
 input#stopButton {
-    left: 75px;
+    
 }
 
 div#son {
-    left:135px;
-    width: 200px;
+
     background-color: rgba(255, 255, 255, 0.021);
     
 }
 
 div#iconeSon{
-    position: absolute;
-    width: 20%;
+    float: left;
+    width: var(--controllerHeight);
     height: 100%;
     background-color: white;
 }
@@ -152,21 +160,21 @@ div#iconeSon img{
 }
 
 div#ajusterSon{
-    position: absolute;
+    display: none;
+    float: left;
     width: 70%;
     height: 100%;
-    left:21%;
     background-color: rgba(0, 0, 0, 0);
 }
 
 div#barre {
     position: relative;
-    border: solid 3px black;
+    border: solid 1px black;
     background-color: rgba(255, 255, 255, 0.116);
     width: 80%;
-    height: 20%;
+    height: 10px;
     margin: 0 auto;
-    margin-top: 15px;
+    top: calc(50% - 5px);
     
 }
 
@@ -179,17 +187,70 @@ div#volume {
     width: 50%;
     height: 100%;
     background-color: white;
+    
 }
+
+p#temps{
+    width: 100px;
+    height: 100%;
+    color: white;
+    text-align: center;
+    background-color: transparent;
+}
+
+div#vitesse{
+    float: right;
+    background-color:unset;
+    color: white;
+    height: auto;
+    margin-top: 10px;
+}
+
+div#vitesse div#tableVitesse{
+    display: none;
+    position: absolute;
+    width: 100px;
+    background-color: rgba(0,0,0,0.5);
+    top: -110px;
+    right: 50px;
+    z-index: 2;
+}
+
+div#vitesse div#iconeVitesse:hover{
+cursor: pointer;
+}
+
+div#vitesse div#iconeVitesse{
+    
+    background-color: inherit;
+    text-align: center;
+    font-size: larger;
+}
+
+div#vitesse li:hover{
+    cursor: pointer;
+}
+
+div#fullscreen {
+    float:right;
+}
+
+div#fullscreen input{
+    width: 100%;
+    height: 100%;
+}
+
 
 /** bloc de la prochaine et précèdente vidéo **/
 div#prochain {
     position: relative;
-    margin: 0 auto;
     width: var(--videoWidth);
     height: 40px;
     background-color: var(--couleurIII);
     padding-top: 20px;
     border-radius: 30px;
+   margin: 0 auto;
+    
 }
 
 div#prochain a{

@@ -22,7 +22,7 @@ function code($arguments)
                 
             </head>
         
-            <body>
+            <body id="corps">
                 $enTete
                 <div id="chapitrage">
                     <a id="formationLien" href={$arguments["LienFormation"]}> {$arguments["NomFormation"]}</a>
@@ -34,21 +34,25 @@ function code($arguments)
         
                 <div id="video">
                     <h2> {$arguments["TitreVideo"]} </h2>
-                    <div id="blocVideoPlayer" onmouseover="afficheControl()" onmouseout="cacheControl()">
-                        <video id="videoPlayer" title={$arguments["Video"]}>
-                            <source src={$arguments["Video"]}>
+                    <div id="blocVideoPlayer" onmouseover="afficheControl()" onmouseout="cacheControl()" >
+                        
+                        <video id="videoPlayer" title={$arguments["Video"]}" >
+                            <source src={$arguments["Video"]} >
                              
                             Your browser does not support the video tag.
                         </video>
-                        
+
+                        <div id="clickVideo" onclick="play()">
+                        </div>
+
                         <div id="progression">
                             <span id="position"></span>
                             <span id="chargement"></span>
                         </div>
                         <div id="controlers">
-                            <input type="image" src="images/Video/play.png" onclick="play();" id="playButton" class="controler">
-                            <input type="image" src="images/Video/stop.png" onclick="stop()" id="stopButton" class="controler">
-                            <div id="son" class="controler">
+                            <input type="image" src="images/Video/play.png" onclick="play();" id="playButton" >
+                            <input type="image" src="images/Video/stop.png" onclick="stop()" id="stopButton" >
+                            <div id="son" >
                                 <div id="iconeSon">
                                     <img src="images/Video/sound.png">
                                 </div>
@@ -59,7 +63,28 @@ function code($arguments)
                                     </div>
                                 </div>
                             </div>
-                            <p id="temps"> </p>
+                            <p id="temps">  </p>
+
+                            <div id="fullscreen" >
+                                <input type=image src="images/Video/fullscreen.png" onclick="full()" id="playFull" >
+                            </div>
+
+                            <div id="vitesse" >
+                                <div id="iconeVitesse">
+                                    1.00x
+                                </div>
+                                <div id="tableVitesse">
+                                    <ul>
+                                        <li>2.00x</li>
+                                        <li>1.50x</li>
+                                        <li>1.25x</li>
+                                        <li>1.00x</li>
+                                        <li>0.75x</li>
+                                    </ul>
+                                </div>
+                                
+                            </div>
+                            
                         </div>
                     </div>
                 </div>

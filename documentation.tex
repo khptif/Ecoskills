@@ -1,0 +1,107 @@
+\documentclass[a4paper]{article}
+
+%%%%%%%% CREATE DOCUMENT STRUCTURE %%%%%%%%
+%% Language and font encodings
+\usepackage[english]{babel}
+\usepackage[utf8x]{inputenc}
+\usepackage[T1]{fontenc}
+%\usepackage{subfig}
+
+%% Sets page size and margins
+\usepackage[a4paper,top=3cm,bottom=2cm,left=2cm,right=2cm,marginparwidth=1.75cm]{geometry}
+
+%% Useful packages
+\usepackage{amsmath}
+\usepackage{graphicx}
+\usepackage[colorinlistoftodos]{todonotes}
+\usepackage[colorlinks=true, allcolors=blue]{hyperref}
+%\usepackage{caption}
+\usepackage[justification=centering]{caption}
+\usepackage{subcaption}
+\usepackage{sectsty}
+\usepackage{float}
+\usepackage{titling} 
+\usepackage{blindtext}
+\usepackage[square,sort,comma,numbers]{natbib}
+\usepackage[colorinlistoftodos]{todonotes}
+\usepackage{xcolor}
+\usepackage{fancyhdr}
+\usepackage{lipsum}
+
+\begin{document}
+
+\begin{center}
+\LARGE\textbf{Documentation Ecoskill}
+
+\end{center}
+
+\section*{Préambule}
+Les différents langages utilisés pour ce projet sont les suivants:
+	\begin{itemize}
+		\item HTML5 \& CSS3
+		\item PHP
+		\item JavaScript
+	\end{itemize}
+
+Pour ce qui est du serveur, ce projet a été construit en utilisant Ampps (Apache,Mysql,PHP). Aucun outil externe ou framework n'a été utilisé pour coder les programmes. Tout a été codé directement dans les langues citées.
+
+\section{But}
+Ce répertoire contient la page d'accueil du site ainsi que le fichier PHP qui contient les variables globales qui seront utilisés par une grande partie des fichiers PHP. Il contient aussi tous les dossiers du projet. Chaque fichier du projet devra avoir comme chemin par défaut ce répertoire ce qui permet de faciliter l'écriture des différents chemins. Par exemple, si nous avons besoin du chemin d'une image, il suffira de commencer par "images/...." au lieu de "../../images/....".
+
+Voyons à présent les différents éléments du dossier.
+
+\section{variables.php}
+
+Ce fichier contient différentes variables récurrentes du projet. Pour l'instant, il contient le code html de l'en-tête qui doit apparaître dans toutes les pages du site.
+	\subsection{en-tête}
+	L'en-tête se trouve toujours en haut centré malgré le déroulement vers le bas de la page. Voici ses différents éléments, de gauche à droite:
+	\begin{itemize}
+		\item Le logo qui est un lien vers la page d'accueil
+		\item Une barre de recherche
+		\item Un lien vers la page d'accueil
+		\item Un lien vers la page personnelle
+		\item Un lien vers la page d'inscription et de connection
+	\end{itemize}
+\section{index.php}
+
+Ce fichier représente la page d'accueil du site. Il est décomposé en deux partie:
+	\begin{itemize}
+		\item Un lien vers un questionnaire
+		\item Les différentes formations du site. Les images sont des liens vers les formations.
+	\end{itemize}
+
+\section{Les dossiers}
+Voici une description des différents dossiers du répertoire:
+
+	\subsection{/CSS}
+		Contient tous les fichiers css du projet. Le fichier variable.css contient les variables communes pour tous les fichiers css.
+	
+	\subsection{/Formations}
+		 Contient les codes PHP et HTML qui définit les pages des différentes formations. Nous y avons le fichier PHP qui code le pattern de la page d'une formation et le pattern d'une page video. Il suffit ensuite de mettre des valeurs spécifiques comme dans "formationAlimentation.php" pour obtenir une page de la formatione et pour une page video, c'est la même chose. On a l'exemple de "Alimentation/alim1.php". Pour la lecture vidéo, on utilise notre lecteur vidéo personnelle.
+	\subsection{/images}
+		Contient les images du projets
+		
+	\subsection{/JsScript}
+		Contient les codes javascripts. Pour l'instant, il contient le script qui permet de gérer le lecteur vidéo.
+		
+	\subsection{/Questionnaire}
+		Contient le pattern du code d'un questionnaire. Pour chaque question, il suffit de remplir les variables et utiliser le code pattern. Chaque page récupère la réponse de la question précédente.
+		
+	\subsection{/Utilisateur}
+		Contient les pages liées à l'utilisateur. Nous avons la page login qui permet de s'inscrire et de se connecter. Les colonnes de la base de données "utilisateur" sont:
+		\begin{itemize}
+			\item Nom Varchar(30)
+			\item Prenom Varchar(30)
+			\item Sexe Varchar(20)
+			\item AdresseImage(100)
+			\item Email(255)
+			\item DateNaissance Date
+			\item MotPasse Varchar(255)
+			\item Commune Varchar(255)
+			\item Localite Varchar(255)
+			\item Adresse Varchar(255)
+		\end{itemize}
+	Le fichier "login.php" permet de vérifier les données du formulaires et réponds selon que nous demandons une inscription ou une connexion.
+	\\
+	Le fichier "utilisateurPattern.php" et "utilisateurA.php" permet de construire la page personnelle de l'utilisateur.
+\end{document}

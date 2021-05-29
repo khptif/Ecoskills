@@ -1,14 +1,19 @@
 
 @import url("../variables.css");
 
+:root{
+    --formulaireWidth:1200px;
+    --formulaireHeight : 950px;
+}
+
 body {
     background-color: var(--couleurPrincipale);
 }
 
 div#formulaires {
 
-    height: 500px;
-    width: 900px;
+    height: var(--formulaireHeight);
+    width: var(--formulaireWidth);
     border: solid 3px var(--couleurPrincipale);
     background-color: var(--couleurSecondaire);
     border-radius: 30px;
@@ -17,15 +22,13 @@ div#formulaires {
     padding: 2px;
 }
 
-.input {
-    display: block;
-    height: 30px;
-}
+/* Les erreurs du formulaire */
 
 p.erreur {
     font-size: smaller;
     font-weight: bolder;
-    display: inline;
+    position: relative;
+    bottom: 15px;
 }
 
 p.erreurSQL{
@@ -35,34 +38,26 @@ p.erreurSQL{
     
 }
 
-label{
-    float: left;
-}
 
-div#formulaires input, select {
-    display: inline;
-}
-
-h2 {
-    text-align: center;
-}
+/* la partie inscription */
 div#inscription{
     float: left;
     position: relative;
     left: 15%;
     height: 80%;
-    width: 300px;
+    width: calc(var(--formulaireWidth)/3);
     margin-top: 1%;
     border: var(--couleurPrincipale) 3px solid;
     border-radius: 30px;
     padding: 2px;
 }
 
+/* la partie login */
 div#login{
     float: right;
     position: relative;
-    height: 80%;
-    width: 300px;
+    height: 30%;
+    width: calc(var(--formulaireWidth)/3);
     margin-top: 1%;
     right: 15%;
     border: var(--couleurPrincipale) 3px solid;
@@ -70,53 +65,63 @@ div#login{
     border-radius:30px;
 }
 
+/* les différents élément à remplir */
+
 .input {
+    position: relative;
     display: block;
-    margin-bottom: 20px;
+    height: 40px;
+    width: 100%;
+    margin-top: 10px;
+    
     
 }
 
+.inputFile{
+    position: relative;
+    display: block;
+    margin-bottom: 60px;
+    height: 30px;
+}
+
 .input * {
+    
     color: var(--couleurPrincipale);
 }
 
+ h2 {
+    text-align: center;
+}
+
 label {
-    width: 100px;
+    float: left;
+    width: 33%;
     font-weight: bolder;
+}
+
+div#formulaires input {
+    border: var(--couleurPrincipale) 1px solid;
+    color: var(--couleurPrincipale);
+    border-radius: 30px;
+    width:60%;
+    outline: none;
+}
+div#formulaires input[type='date'] {
+
+    width:33%;
+}
+
+div#formulaires input:focus{
+    border: var(--couleurPrincipale) 3px solid;
+    color: var(--couleurPrincipale);
+    border-radius: 30px;
+    outline: none;
 }
 
 div#formulaires input[type="submit"] {
 
     float: right;
     margin-right: 20px;
-}
-
-div#formulaires input[type="text"] {
-    border: var(--couleurPrincipale) 1px solid;
-    color: var(--couleurPrincipale);
-    border-radius: 30px;
-    outline: none;
-}
-
-div#formulaires input[type="text"]:focus {
-    outline: none;
-    border: var(--couleurPrincipale) 3px solid;
-    border-radius: 30px;
-    font-weight: bolder;
-}
-
-div#formulaires input[type="number"]{
-    
-    outline: none;
-    border: var(--couleurPrincipale) 1px solid;
-    border-radius: 30px;
-    color: var(--couleurPrincipale);
-}
-div#formulaires input[type="number"]:focus {
-    font-weight: bolder;
-    outline: none;
-    border: var(--couleurPrincipale) 3px solid;
-    border-radius: 30px;
 }
 
 div#formulaires select {
@@ -132,6 +137,8 @@ div#formulaires select:focus {
     border: var(--couleurPrincipale) 3px solid;
     border-radius: 30px;
 }
+
+
 
 div#formulaires input[type="submit"] {
 
@@ -155,3 +162,4 @@ div#formulaires input[type="submit"]:hover:focus {
     cursor: pointer;
     outline: none;
 }
+
